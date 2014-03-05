@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="OriginalWidth" sid="3636910702213187" static="0" type="number">150</variable>
+        <variable constant="0" name="Multiplier" sid="5817928274504485" static="0" type="number">1</variable>
         <variable constant="0" name="Health" sid="5954408503257445" static="0" type="number">9</variable>
         <variable constant="0" name="Score" sid="9211728847571521" static="0" type="number">0</variable>
         <event-block sid="5667964751432888">
@@ -27,11 +29,24 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-3" name="Create object" sid="3141071869958235" type="System">
+                <action id="-3" name="Create object" sid="1861722656934646" type="System">
                     <param id="0" name="Object to create">Food</param>
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="X">random(0,1366)</param>
                     <param id="3" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9655378047972633">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7452438923498028" type="System">
+                    <param id="0" name="Interval (seconds)">5.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="432040455152282" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1 * Multiplier</param>
                 </action>
             </actions>
         </event-block>
@@ -47,16 +62,19 @@
         </event-block>
         <event-block sid="3597198886581023">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="1020668066302381" type="Food">
+                <condition id="0" name="On collision with another object" sid="6008860490659388" type="Food">
                     <param id="0" name="Object">FatCatSprite</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="-10" name="Add to" sid="9266462204437119" type="System">
-                    <param id="0" name="Variable">Score</param>
+                    <param id="0" name="Variable">Multiplier</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="-9" name="Destroy" sid="9742137657132768" type="Food" />
+                <action id="-9" name="Destroy" sid="3337634269392221" type="Food" />
+                <action id="-5" name="Set width" sid="4568156203856101" type="FatCatSprite">
+                    <param id="0" name="Width">(FatCatSprite.Width * 1.10)</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="4626519371336287">
@@ -71,7 +89,7 @@
         </event-block>
         <event-block sid="2297489551485614">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="5330143536233913" type="Enemy">
+                <condition id="0" name="On collision with another object" sid="8183235544895495" type="Enemy">
                     <param id="0" name="Object">FatCatSprite</param>
                 </condition>
             </conditions>
@@ -81,6 +99,13 @@
                     <param id="1" name="Value">1</param>
                 </action>
                 <action id="-9" name="Destroy" sid="4038099191181052" type="Enemy" />
+                <action id="-9" name="Set value" sid="873248092597952" type="System">
+                    <param id="0" name="Variable">Multiplier</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-5" name="Set width" sid="9521238853022863" type="FatCatSprite">
+                    <param id="0" name="Width">OriginalWidth</param>
+                </action>
             </actions>
         </event-block>
     </events>
