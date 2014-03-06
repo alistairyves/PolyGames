@@ -131,6 +131,9 @@
         <object-type name="Audio" sid="8330657976122253">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="Multiplier" sid="697041045944509">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">

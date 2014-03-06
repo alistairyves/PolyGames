@@ -15,15 +15,11 @@
                 <action id="0" name="Set text" sid="5623259874219369" type="Health">
                     <param id="0" name="Text">&quot;Health:&quot; &amp;Health</param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block sid="919129771856208">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="498206120663665" type="System" />
-            </conditions>
-            <actions>
                 <action id="0" name="Set text" sid="6574918343009903" type="Score">
                     <param id="0" name="Text">&quot;Score:&quot; &amp;Score</param>
+                </action>
+                <action id="0" name="Set text" sid="7547429516739323" type="Multiplier">
+                    <param id="0" name="Text">&quot;Multiplier X&quot; &amp;Multiplier</param>
                 </action>
             </actions>
         </event-block>
@@ -113,6 +109,16 @@
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
+                <action id="-3" name="Create object" sid="2418920715311649" type="System">
+                    <param id="0" name="Object to create">Multiplier</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">FatCatSprite.X -50</param>
+                    <param id="3" name="Y">FatCatSprite.Y - 20</param>
+                </action>
+                <action id="-16" name="Wait" sid="9691871942112152" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6723332227210096" type="Multiplier" />
             </actions>
         </event-block>
         <event-block sid="2297489551485614">
