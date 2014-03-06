@@ -87,6 +87,12 @@
                 <action id="-5" name="Set width" sid="4568156203856101" type="FatCatSprite">
                     <param id="0" name="Width">(FatCatSprite.Width * 1.10)</param>
                 </action>
+                <action id="0" name="Play" sid="5048028905195579" type="Audio">
+                    <param id="0" name="Audio file">cashRegisterSound</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="1964873802719302">
@@ -101,6 +107,12 @@
                     <param id="1" name="Value">1</param>
                 </action>
                 <action id="-9" name="Destroy" sid="849522541972387" type="Food2" />
+                <action id="0" name="Play" sid="6612320373465698" type="Audio">
+                    <param id="0" name="Audio file">cashRegisterSound</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="2297489551485614">
@@ -121,6 +133,12 @@
                 </action>
                 <action id="-5" name="Set width" sid="9521238853022863" type="FatCatSprite">
                     <param id="0" name="Width">OriginalWidth</param>
+                </action>
+                <action id="0" name="Play" sid="3086202220141914" type="Audio">
+                    <param id="0" name="Audio file">thudSound</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>

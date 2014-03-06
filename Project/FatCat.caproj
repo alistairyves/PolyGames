@@ -10,6 +10,7 @@
     <unique-id>36c51qm9x6mb6</unique-id>
     <saved-with-version>16300</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
@@ -127,6 +128,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Audio" sid="8330657976122253">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
@@ -135,8 +139,31 @@
     <event-folder expanded="1">
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
-    <global-instances />
-    <sounds-folder expanded="1" />
+    <global-instances>
+        <global-instance type="Audio" uid="6">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder expanded="1">
+        <file name="cashRegisterSound.m4a" />
+        <file name="cashRegisterSound.ogg" />
+        <file name="cashRegisterSound.wav" />
+        <file name="thudSound.m4a" />
+        <file name="thudSound.ogg" />
+        <file name="thudSound.wav" />
+    </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
