@@ -80,7 +80,7 @@
                         <x>16</x>
                         <y>21</y>
                         <z>0</z>
-                        <width>194</width>
+                        <width>511</width>
                         <height>97</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -231,8 +231,8 @@
                     <properties>
                         <text>Multiplier</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Gill Sans Ultra Bold,-27,400,0</font>
-                        <color>51,204,255</color>
+                        <font>Showcard Gothic,-27,400,0</font>
+                        <color>51,204,51</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
@@ -243,9 +243,9 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>166</x>
-                        <y>-263</y>
+                        <y>-262</y>
                         <z>0</z>
-                        <width>288</width>
+                        <width>312</width>
                         <height>104</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
