@@ -75,7 +75,16 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5520719847311896" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.10625" y="0.465625" />
+                            <point x="0.221875" y="0" />
+                            <point x="0.7875" y="0" />
+                            <point x="0.903125" y="0.475" />
+                            <point x="0.903125" y="0.996875" />
+                            <point x="0.09375" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -91,7 +100,14 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1288242348086815" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.15625" y="0.109375" />
+                            <point x="0.871875" y="0.109375" />
+                            <point x="0.878125" y="0.94375" />
+                            <point x="0.146875" y="0.94375" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>

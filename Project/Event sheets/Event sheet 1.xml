@@ -7,6 +7,26 @@
         <variable constant="0" name="Multiplier" sid="5817928274504485" static="0" type="number">1</variable>
         <variable constant="0" name="Health" sid="5954408503257445" static="0" type="number">9</variable>
         <variable constant="0" name="Score" sid="9211728847571521" static="0" type="number">0</variable>
+        <event-block sid="4626519371336287">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7246166502097948" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="5623259874219369" type="Health">
+                    <param id="0" name="Text">&quot;Health:&quot; &amp;Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="919129771856208">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="498206120663665" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6574918343009903" type="Score">
+                    <param id="0" name="Text">&quot;Score:&quot; &amp;Score</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="5667964751432888">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="1663045674545683" type="System">
@@ -17,7 +37,7 @@
                 <action id="-3" name="Create object" sid="452946394657286" type="System">
                     <param id="0" name="Object to create">Enemy</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">random(0,1366)</param>
+                    <param id="2" name="X">random(15,1356)</param>
                     <param id="3" name="Y">0</param>
                 </action>
             </actions>
@@ -32,31 +52,23 @@
                 <action id="-3" name="Create object" sid="1861722656934646" type="System">
                     <param id="0" name="Object to create">Food</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">random(0,1366)</param>
+                    <param id="2" name="X">random(15,1356)</param>
                     <param id="3" name="Y">0</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="9655378047972633">
+        <event-block sid="5792578648548214">
             <conditions>
-                <condition id="-6" name="Every X seconds" sid="7452438923498028" type="System">
-                    <param id="0" name="Interval (seconds)">5.0</param>
+                <condition id="-6" name="Every X seconds" sid="4359747383488889" type="System">
+                    <param id="0" name="Interval (seconds)">8</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="432040455152282" type="System">
-                    <param id="0" name="Variable">Score</param>
-                    <param id="1" name="Value">1 * Multiplier</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="919129771856208">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="498206120663665" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="6574918343009903" type="Score">
-                    <param id="0" name="Text">&quot;Score:&quot; &amp;Score</param>
+                <action id="-3" name="Create object" sid="6958952516523503" type="System">
+                    <param id="0" name="Object to create">Food2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(15,1356)</param>
+                    <param id="3" name="Y">0</param>
                 </action>
             </actions>
         </event-block>
@@ -68,8 +80,8 @@
             </conditions>
             <actions>
                 <action id="-10" name="Add to" sid="9266462204437119" type="System">
-                    <param id="0" name="Variable">Multiplier</param>
-                    <param id="1" name="Value">1</param>
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1*Multiplier</param>
                 </action>
                 <action id="-9" name="Destroy" sid="3337634269392221" type="Food" />
                 <action id="-5" name="Set width" sid="4568156203856101" type="FatCatSprite">
@@ -77,14 +89,18 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="4626519371336287">
+        <event-block sid="1964873802719302">
             <conditions>
-                <condition id="-1" name="Every tick" sid="7246166502097948" type="System" />
+                <condition id="0" name="On collision with another object" sid="9130399890061979" type="Food2">
+                    <param id="0" name="Object">FatCatSprite</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="5623259874219369" type="Health">
-                    <param id="0" name="Text">&quot;Health:&quot; &amp;Health</param>
+                <action id="-10" name="Add to" sid="3491742340426156" type="System">
+                    <param id="0" name="Variable">Multiplier</param>
+                    <param id="1" name="Value">1</param>
                 </action>
+                <action id="-9" name="Destroy" sid="849522541972387" type="Food2" />
             </actions>
         </event-block>
         <event-block sid="2297489551485614">
@@ -108,19 +124,16 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="5792578648548214">
+        <event-block sid="7728176772541173">
             <conditions>
-                <condition id="-6" name="Every X seconds" sid="4359747383488889" type="System">
-                    <param id="0" name="Interval (seconds)">8</param>
+                <condition id="-8" name="Compare two values" sid="6399713191279952" type="System">
+                    <param id="0" name="First value">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-3" name="Create object" sid="6958952516523503" type="System">
-                    <param id="0" name="Object to create">Food2</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">random(0,1366)</param>
-                    <param id="3" name="Y">0</param>
-                </action>
+                <action id="-9" name="Destroy" sid="6707856194964431" type="FatCatSprite" />
             </actions>
         </event-block>
     </events>
