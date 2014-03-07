@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>FatCat</name>
-    <description></description>
+    <description>Get money and avoid peace</description>
     <version>1.0.0.0</version>
-    <author></author>
+    <author>David Turner, Alistair Mersereau, Zak Soliman</author>
     <author-email></author-email>
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
@@ -13,6 +13,8 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -35,7 +37,7 @@
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
-        <prop name="Orientations">Any</prop>
+        <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Preview browser">(default)</prop>
         <prop name="Sampling">Linear</prop>
@@ -134,6 +136,106 @@
         <object-type name="Multiplier" sid="697041045944509">
             <plugin id="Text" />
         </object-type>
+        <object-type name="TiledBackground" sid="6926115942070867">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TiledBackground2" sid="8879804213202701">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite" sid="111455983033084">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="209564310504009" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Background" sid="3821537906215499">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8062768079246068" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="7236905268138728">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="GameOverScreen" sid="7684764280890841">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9254399728552007" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RetryButton" sid="8456344408910566">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4124050998693795" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="3414103488810635">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4735663246821156" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LeftArrow" sid="3568020157227208">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3024081213490343" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500826">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.49" y="0" />
+                            <point x="1" y="0.00330579" />
+                            <point x="0.9975" y="0.499174" />
+                            <point x="1" y="0.996694" />
+                            <point x="0.51" y="1" />
+                            <point x="0.00375004" y="0.985124" />
+                            <point x="0.0025" y="0.499174" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RightArrow" sid="3450821903952237">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9106873417855502" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.500826">
+                        <collision-poly>
+                            <point x="0.80875" y="0.747107" />
+                            <point x="0.5" y="0.806612" />
+                            <point x="0.14625" y="0.806612" />
+                            <point x="0.0025" y="0.500826" />
+                            <point x="0.14625" y="0.193388" />
+                            <point x="0.5" y="0.193388" />
+                            <point x="0.80875" y="0.252893" />
+                            <point x="0.9975" y="0.500826" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GameOverScore" sid="9576138061510203">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="StartScreen" sid="1506533217386697">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3087808421086907" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
@@ -156,6 +258,11 @@
                 <roll-off-factor>1</roll-off-factor>
                 <speed-of-sound>5000</speed-of-sound>
                 <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Touch" uid="3">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
             </properties>
         </global-instance>
     </global-instances>

@@ -3,9 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="IsStarted" sid="2110088978337184" static="0" type="number">0</variable>
         <variable constant="0" name="OriginalWidth" sid="3636910702213187" static="0" type="number">150</variable>
         <variable constant="0" name="Multiplier" sid="5817928274504485" static="0" type="number">1</variable>
-        <variable constant="0" name="Health" sid="5954408503257445" static="0" type="number">9</variable>
+        <variable constant="0" name="Health" sid="5954408503257445" static="0" type="number">1</variable>
         <variable constant="0" name="Score" sid="9211728847571521" static="0" type="number">0</variable>
         <event-block sid="4626519371336287">
             <conditions>
@@ -28,6 +29,11 @@
                 <condition id="-6" name="Every X seconds" sid="1663045674545683" type="System">
                     <param id="0" name="Interval (seconds)">0.5</param>
                 </condition>
+                <condition id="-8" name="Compare two values" sid="8544065595329787" type="System">
+                    <param id="0" name="First value">IsStarted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-3" name="Create object" sid="452946394657286" type="System">
@@ -43,6 +49,11 @@
                 <condition id="-6" name="Every X seconds" sid="9143843816546828" type="System">
                     <param id="0" name="Interval (seconds)">2</param>
                 </condition>
+                <condition id="-8" name="Compare two values" sid="297062431341622" type="System">
+                    <param id="0" name="First value">IsStarted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-3" name="Create object" sid="1861722656934646" type="System">
@@ -57,6 +68,11 @@
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="4359747383488889" type="System">
                     <param id="0" name="Interval (seconds)">8</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="6532203896016652" type="System">
+                    <param id="0" name="First value">IsStarted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
                 </condition>
             </conditions>
             <actions>
@@ -157,7 +173,93 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="6707856194964431" type="FatCatSprite" />
+                <action id="-9" name="Destroy" sid="3798011766398549" type="Food" />
+                <action id="-9" name="Destroy" sid="5746217307025019" type="Food2" />
+                <action id="-9" name="Destroy" sid="7440842599493966" type="Enemy" />
+                <action id="-4" name="Set layer visible" sid="3459834577013773" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Create object" sid="3720664345807945" type="System">
+                    <param id="0" name="Object to create">RetryButton</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">286.5</param>
+                    <param id="3" name="Y">555</param>
+                </action>
+                <action id="0" name="Set text" sid="3290806579134402" type="GameOverScore">
+                    <param id="0" name="Text">&quot;You earned $&quot; &amp;Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8005924919602365">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="145323649439785" type="Touch">
+                    <param id="0" name="Object">LeftArrow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="3760178775425058" type="FatCatSprite">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2649271749443249">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="4064556649625917" type="Touch">
+                    <param id="0" name="Object">RightArrow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="6102375959520202" type="FatCatSprite">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6632156523392691">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="9372443014150635" type="Touch">
+                    <param id="0" name="Object">RetryButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9573967606777309" type="System">
+                    <param id="0" name="Variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="8703241028863494" type="RetryButton" />
+                <action id="-9" name="Set value" sid="4184425443689299" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="589892035921696" type="System">
+                    <param id="0" name="Variable">Multiplier</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="9953502723148647" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="5909892250754984" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="4018750420441379">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="4247157910095082" type="System">
+                    <param id="0" name="Layer">3</param>
+                </condition>
+                <condition id="4" name="Is touching object" sid="8943575035362384" type="Touch">
+                    <param id="0" name="Object">StartScreen</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="1574855735505175" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-10" name="Add to" sid="8090903059196243" type="System">
+                    <param id="0" name="Variable">IsStarted</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
     </events>
